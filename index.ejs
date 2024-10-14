@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimarket</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">Minimarket</h1>
+        <a href="/add" class="btn btn-primary mb-3">Tambah Produk</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                    <tr>
+                        <td><%= product.id %></td>
+                        <td><%= product.name %></td>
+                        <td><%= product.price %></td>
+                        <td><%= product.stock %></td>
+                        <td>
+                            <a href="/edit/<%= product.id %>" class="btn btn-warning">Edit</a>
+                            <a href="/delete/<%= product.id %>" class="btn btn-danger">Hapus</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
